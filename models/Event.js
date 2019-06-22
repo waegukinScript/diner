@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
-  bookName: String,
+  name: String,
   emailAddress: String,
   phoneNumber: String,
-  eventDate: Date,
-  selectPeople: String,
+  selectPersons: String,
+  reservationDate: String,
+  reservationTime: String,
   createdAt: String
 }, { timestamps: true });
 

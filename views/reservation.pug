@@ -72,43 +72,43 @@ html(lang='en')
                   | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum fuga, alias distinctio voluptatum magni voluptatibus.
             .row.justify-content-center
               .col-md-10.p-5.form-wrap
-                form(action='#')
+                form(action='/event' method='POST')
                   .row.mb-4
                     .form-group.col-md-4
                       label.label(for='name') Name
                       .form-field-icon-wrap
                         span.icon.ion-android-person
-                        input#name.form-control(type='text')
+                        input#name.form-control(name='name',type='text')
                     .form-group.col-md-4
                       label.label(for='email') Email
                       .form-field-icon-wrap
                         span.icon.ion-email
-                        input#email.form-control(type='email')
+                        input#email.form-control(name='emailAddress',type='email')
                     .form-group.col-md-4
                       label.label(for='phone') Phone
                       .form-field-icon-wrap
                         span.icon.ion-android-call
-                        input#phone.form-control(type='text')
+                        input#phone.form-control(name='phoneNumber',type='text')
                     .form-group.col-md-4
                       label.label(for='persons') Number of Persons
                       .form-field-icon-wrap
                         span.icon.ion-android-arrow-dropdown
-                        select#persons.form-control(name='persons')
-                          option(value='') 1 person
-                          option(value='') 2 persons
-                          option(value='') 3 persons
-                          option(value='') 4 persons
-                          option(value='') 5+ persons
+                        select#persons.form-control(name='selectPersons')
+                          option(value='1') 1 person
+                          option(value='2') 2 persons
+                          option(value='3') 3 persons
+                          option(value='4') 4 persons
+                          option(value='5+') 5+ persons
                     .form-group.col-md-4
                       label.label(for='date') Date
                       .form-field-icon-wrap
                         span.icon.ion-calendar
-                        input#date.form-control(type='text')
+                        input#date.form-control(name='reservationDate',type='text')
                     .form-group.col-md-4
                       label.label(for='time') Time
                       .form-field-icon-wrap
                         span.icon.ion-android-time
-                        input#time.form-control(type='text')
+                        input#time.form-control(name='reservationTime',type='text')
                   .row.justify-content-center
                     .col-md-4
                       input.btn.btn-primary.btn-outline-primary.btn-block(type='submit', value='Submit')

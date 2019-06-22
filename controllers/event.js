@@ -7,11 +7,12 @@ exports.postEvent = (req, res, next) => {
   console.log('Events');
   console.log(obj);
   const event = new Event({
-    bookName: obj.bookName,
+    name: obj.name,
     emailAddress: obj.emailAddress,
     phoneNumber: obj.phoneNumber,
-    eventDate: obj.eventDate,
-    selectPeople: obj.selectPeople,
+    selectPersons: obj.selectPersons,
+    reservationDate: obj.reservationDate,
+    reservationTime: obj.reservationTime
   });
   event.save((err) => {
     if (err) {
@@ -53,11 +54,12 @@ exports.postUpdateEvent = (req, res, next) => {
     if (err) {
       console.log(err);
     } else if (event) {
-    event.bookName = obj.bookName,
-    event.emailAddress = obj.emailAddress,
-    event.phoneNumber = obj.phoneNumber,
-    event.eventDate = obj.eventDate,
-    event.selectPeople = obj.selectPeople,
+      event.name = obj.name,
+        event.emailAddress = obj.emailAddress,
+        event.phoneNumber = obj.phoneNumber,
+        event.selectPersons = obj.selectPersons,
+        event.reservationDate = obj.reservationDate,
+        event.reservationTime = obj.reservationTime
       event.save((err) => {
         if (err) {
           return next(err);
@@ -96,8 +98,8 @@ exports.postGetReportEvent = (req, res, next) => {
                       <hr style=" margin-top:0px; height:10px;border:none;color:#333;background-color:#333; margin-left: 70px; margin-right: 73px;" />
                       <table border="1">
                         <tr>
-                          <td class="heading">Booking Name</td>
-                          <td class="value">${event.bookName}</td>
+                          <td class="heading">Name</td>
+                          <td class="value">${event.name}</td>
                         </tr>
                         <tr>
                           <td class="heading">Email Address</td>
@@ -108,12 +110,16 @@ exports.postGetReportEvent = (req, res, next) => {
                           <td class="value">${event.phoneNumber}</td>
                         </tr>
                         <tr>
-                          <td class="heading">Event Date</td>
-                          <td class="value">${event.eventDate}</td>
+                          <td class="heading">Reservation Date</td>
+                          <td class="value">${event.reservationDate}</td>
+                        </tr>
+                        <tr>
+                          <td class="heading">Reservation Time</td>
+                          <td class="value">${event.reservationTime}</td>
                         </tr>
                         <tr>
                           <td class="heading">Selected People</td>
-                          <td class="value">${event.selectPeople}</td>
+                          <td class="value">${event.selectPersons}</td>
                         </tr>
                       </table>
                   </div>
@@ -204,10 +210,10 @@ const Contact = require('../models/Contact');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-         user: 'lashleykeith@gmail.com',
-         pass: 'cakesheis'
-     }
- });
+    user: 'lashleykeith@gmail.com',
+    pass: 'cakesheis'
+  }
+});
 
 
 exports.postSendEmailEvent = (req, res, next) => {
@@ -369,4 +375,10 @@ exports.postEmailPageEvent = (req, res, next) => {
     page
   });
   // res.send(`Working${page}${name}${recipientEmail}${postMessage}`);
+};
+
+exports.index = (req, res) => {
+  res.render('reservation', {
+    title: 'Reserve A Table'
+  });
 };

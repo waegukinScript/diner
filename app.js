@@ -205,18 +205,17 @@ app.post('/contact/email/:id', contactController.postEmailContact);
 
 app.get('/eventDatabase', eventDatabaseController.getEventDatabase);
 app.get('/userDatabase', userDatabaseController.getUserDatabase);
+
+app.get('/reservation', eventController.index);
 app.post('/event', eventController.postEvent);
 app.post('/event/delete/:id', eventController.postDeleteEvent);
 app.post('/event/get-report/:id', eventController.postGetReportEvent);
 app.post('/event/delete-page/:page', eventController.postDeletePageEvent);
 app.post('/event/save-page/:page', eventController.postSavePageEvent);
-
 app.post('/event/send-email-page/:page', eventController.postSendEmailPageContact);
 app.post('/event/email-page/:page', eventController.postEmailPageEvent);
 app.post('/event/send-email/:id', eventController.postSendEmailEvent);
 app.post('/event/email/:id', eventController.postEmailEvent);
-
-app.get('/eventDatabase', eventDatabaseController.getEventDatabase);
 app.post('/event/edit/:id', eventController.postEditEvent);
 app.post('/event/update/:id', eventController.postUpdateEvent);
 
