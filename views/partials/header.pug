@@ -1,0 +1,47 @@
+about.htmldoctype
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Sneaky Restaurant - Home
+  link(rel='icon' href='img/Fevicon.png' type='image/png')
+  link(rel='stylesheet' href='vendors/bootstrap/bootstrap.min.css')
+  link(rel='stylesheet' href='vendors/themify-icons/themify-icons.css')
+  link(rel='stylesheet' href='vendors/owl-carousel/owl.theme.default.min.css')
+  link(rel='stylesheet' href='vendors/owl-carousel/owl.carousel.min.css')
+  link(rel='stylesheet' href='vendors/Magnific-Popup/magnific-popup.css')
+  link(rel='stylesheet' href='css/style.css')
+// ================ Header Menu Area start =================
+header.header_area
+  .main_menu
+    nav.navbar.navbar-expand-lg.navbar-light
+      .container.box_1620
+        a.navbar-brand.logo_h(href='/')
+          img(src='img/logo.png' alt='')
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        #navbarSupportedContent.collapse.navbar-collapse.offset
+          ul.nav.navbar-nav.menu_nav.justify-content-end
+            li.nav-item.active
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='/about') About
+            li.nav-item
+              a.nav-link(href='/menu') Menu
+            li.nav-item
+              a.nav-link(href='/chef') Chef
+            li.nav-item.submenu.dropdown
+              a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false') Blog
+              ul.dropdown-menu
+                li.nav-item
+                  a.nav-link(href='/blog') Blog Single
+                li.nav-item
+                  a.nav-link(href='/blog-details') Blog Details
+            li.nav-item
+              a.nav-link(href='/contact') Contact
+// ================Header Menu Area =================
+
+
+
